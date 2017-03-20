@@ -1,0 +1,67 @@
+//variables
+float x = 500;
+float y = 500;
+float speed = 5;
+int h = 500;
+int w = 500;
+
+//setup
+void setup() {
+  size(1000,1000);
+  background(0);
+  
+  }
+
+//The lines created using triangles
+void draw() {
+ if(keyPressed) {
+ if(key == 'a' || key == 'A') {
+   background(0);
+    }
+  }
+  if(keyPressed) {
+    if(key == 'r' || key == 'R') {
+      fill(230,0,0);
+  noStroke();
+  triangle(h,w,h+50,w-50,h+20,w-5);
+  fill(230,0,0);
+  noStroke();
+  triangle(h,w,h-50,w+50,h-20,w+5);
+  move();
+      fill(230,0,0);
+  noStroke();
+  triangle(w,h,w+50,h-50,w+20,h-5);
+  fill(230,0,0);
+  noStroke();
+  triangle(w,h,w-50,h+50,w-20,h+5);
+  loop();
+    }
+  }
+  fill(0,random(200),random(230));
+  noStroke();
+  triangle(h,w,h+50,w-50,h+20,w-5);
+  fill(0,random(200),random(230));
+  noStroke();
+  triangle(h,w,h-50,w+50,h-20,w+5);
+  move();
+      fill(0,random(200),random(230));
+  noStroke();
+  triangle(w,h,w+50,h-50,w+20,h-5);
+  fill(0,random(200),random(230));
+  noStroke();
+  triangle(w,h,w-50,h+50,w-20,h+5);
+  loop();
+  
+  
+}
+//The movement for the lines
+void move() {
+  h = h + 1; 
+  if(h > height) {
+    h = 0;
+  }
+  w = w + 5;
+  if( w > width) {
+    w = 0;
+  }
+}
